@@ -82,7 +82,7 @@ always @(posedge pclk or negedge prstn) begin
   if (!prstn) begin
     rd_trans_low <= 1'b0;
   end else begin
-    if(nvdla2csb_valid & rd_trans_low) 
+    if(nvdla2csb_valid) 
         rd_trans_low <= 1'b0;
     else if (csb2nvdla_ready & rd_trans_vld) 
         rd_trans_low <= 1'b1;
